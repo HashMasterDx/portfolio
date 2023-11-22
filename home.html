@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>&lt; Lennyn Leyva A. /&gt; - Portafolio</title>
+    <!-- Enlace a Bootstrap CSS (puedes cambiar la URL si lo descargaste localmente) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">&lt; Lennyn Leyva A. /&gt;</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/HashMasterDx/" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/lennyn-lean" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="cv-link" class="nav-link" href="CV_Lennyn_Leyva_Andrade.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> CV
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <!-- Imagen redonda -->
+            <img src="img.jpeg" alt="Imagen de perfil" class="rounded-circle mb-3" style="width: 150px; height: 150px;">
+            <h1>&lt; Lennyn Leyva A. /&gt;</h1>
+            <p class="lead">Software Developer</p>
+            <div id="about-me">
+                <!-- Contenido de la sección "Sobre mí" -->
+                <p class="text-muted">Apasionado y dedicado desarrollador web con un fuerte compromiso con el aprendizaje continuo y el desarrollo de habilidades. Me apasiona mantenerme actualizado sobre las últimas tendencias y tecnologías en el desarrollo web, demostrando un enfoque proactivo a través de la investigación autodirigida más allá de mis responsabilidades laborales. Fuera del mundo tecnológico, encuentro inspiración en los videojuegos, apreciando su narrativa, diseño y tecnología. Además, mi amor por el cine y la música alimenta mi creatividad, aportando una perspectiva única a mi trabajo como desarrollador web.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Botón para cambiar entre español e inglés -->
+    <div class="row mt-3 justify-content-center">
+        <div class="col-6 text-center">
+            <button class="btn btn-dark" id="toggle-language">
+                <i class="fas fa-language"></i> <span>English</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Enlace a Bootstrap JS (opcional, solo si necesitas funcionalidades específicas) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery (asegúrate de incluirlo después de Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Manejo del cambio de idioma
+        $("#toggle-language").on("click", function () {
+            toggleLanguage();
+        });
+
+        function toggleLanguage() {
+            // Obtener el contenido actual del botón
+            var buttonText = $("#toggle-language span").text();
+
+            // Contenido en español
+            var contentES = '<p class="text-muted">Apasionado y dedicado desarrollador web con un fuerte compromiso con el aprendizaje continuo y el desarrollo de habilidades. Me apasiona mantenerme actualizado sobre las últimas tendencias y tecnologías en el desarrollo web, demostrando un enfoque proactivo a través de la investigación autodirigida más allá de mis responsabilidades laborales. Fuera del mundo tecnológico, encuentro inspiración en los videojuegos, apreciando su narrativa, diseño y tecnología. Además, mi amor por el cine y la música alimenta mi creatividad, aportando una perspectiva única a mi trabajo como desarrollador web.</p>';
+
+            // Contenido en inglés (puedes reemplazar con tu propio contenido)
+            var contentEN = '<p class="text-muted">Passionate and dedicated web developer with a strong commitment to continuous learning and skill development. I thrive on staying updated with the latest trends and technologies in web development, demonstrating a proactive approach through self-directed research beyond my job responsibilities. Outside the tech world, I find inspiration in video games, appreciating their narrative, design, and technology. Additionally, my love for film and music fuels my creativity, bringing a unique perspective to my work.</p>';
+
+            // Cambiar al contenido correspondiente al estado del botón
+            if (buttonText === "English") {
+                $("#about-me").html(contentEN);
+                $("#toggle-language span").text("Español");
+                $("#cv-link").html('<i class="fas fa-file-pdf"></i> Resume').attr('href', 'CV_Lennyn_Leyva_Andrade_E.pdf');
+            } else {
+                $("#about-me").html(contentES);
+                $("#cv-link").html('<i class="fas fa-file-pdf"></i> CV').attr('href', 'CV_Lennyn_Leyva_Andrade.pdf');
+                $("#toggle-language span").text("English");
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
